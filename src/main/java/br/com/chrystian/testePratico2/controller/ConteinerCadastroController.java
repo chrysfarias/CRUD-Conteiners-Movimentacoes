@@ -1,6 +1,7 @@
 package br.com.chrystian.testePratico2.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -42,7 +45,19 @@ public class ConteinerCadastroController {
 		Conteiner conteinerTeste  = requisicao.toConteiner();	
 		conteinerRepository.save(conteinerTeste);
 		model.addAttribute("mensagemSucesso", "Operação Realizada com Sucesso");
-		return "home";
+		return "redirect:/home";
+	}
+	
+	@GetMapping("/excluir/{id}")
+	
+	public String alterarConteiner(@PathVariable("id") String id, Model model) {
+	
+		Optional<Conteiner> conteinerOpt = conteinerRepository.findById(id);
+		 
+		conteinerRepository.delete(conteinerOpt.get());
+		
+		
+		return "redirect:/home";
 	}
 	
 }
