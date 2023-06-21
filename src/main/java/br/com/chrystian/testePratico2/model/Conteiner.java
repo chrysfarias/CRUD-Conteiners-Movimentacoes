@@ -2,6 +2,8 @@ package br.com.chrystian.testePratico2.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
 
@@ -15,6 +17,9 @@ public class Conteiner {
 	private String status;
 	private String categoria;
 	
+	
+
+
 	public String getCliente() {
 		return cliente;
 	}

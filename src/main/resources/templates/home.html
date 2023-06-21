@@ -25,7 +25,7 @@
 			<nav class="navbar navbar-expand-lg bg-body-tertiary d-flex flex-row mb-3">	
 				<a class="link-offset-2 link-underline link-underline-opacity-0 p-2 fs-3" href="/home">Crud Contêiner</a>
 				<a class="link-offset-2 link-underline link-underline-opacity-0 p-2 fs-3" href="www.google.com">Crud Movimentações</a>
-				<a class="link-offset-2 link-underline link-underline-opacity-0 p-2 fs-3" href="www.google.com">Relatórios</a>	
+				<a class="link-offset-2 link-underline link-underline-opacity-0 p-2 fs-3" href="/relatorios">Relatórios</a>	
 			</nav>	
 		</div>
 		
@@ -52,7 +52,7 @@
 				<tr  th:each="conteiner : ${conteiners}">
 					<td th:text="${conteiner.numeroConteiner}">Numero conteiner</td>
 					<td th:text="${conteiner.cliente}">cliente</td>
-					<td>tipo</td>
+					<td th:text="${conteiner.tipo}"></td>
 					<td th:text="${conteiner.status}">status</td>
 					<td  th:text="${conteiner.categoria}">categoria</td>
 					<td>
@@ -89,10 +89,10 @@
 							<fieldset class="mt-2">
 								<legend>Tipo</legend>
 								<label for="tipo">20</label>
-								<input type="radio" name="conteinerTipo" id="tipo20">
+								<input type="radio" name="conteinerTipo" id="tipo20" value="20">
 													
 								<label for="tipo">40</label>
-								<input type="radio" name="conteinerTipo" id="tipo40">
+								<input type="radio" name="conteinerTipo" id="tipo40" value="40" >
 								
 								<div  class="form-control is-invalid" th:errors="*{conteinerTipo}">
 									mensagem de erro para tipo conteiner
@@ -103,9 +103,9 @@
 							<fieldset>
 								<legend>Status</legend>
 								<label for="status">Cheio</label>
-								<input type="radio" name="conteinerStatus" id="statuscheio">
+								<input type="radio" name="conteinerStatus" id="statuscheio" value="cheio">
 								<label for="status">Vazio</label>
-								<input type="radio" name="conteinerStatus" id="statusvazio">
+								<input type="radio" name="conteinerStatus" id="statusvazio" value="vazio">
 								
 								<div  class="form-control is-invalid" th:errors="*{conteinerStatus}">
 									mensagem de erro para Status
@@ -116,9 +116,9 @@
 							<fieldset>
 								<legend>Categoria</legend>
 								<label for="categoria">Importação</label>
-								<input type="radio" name="conteinerCategoria" id="categoriaimportacao">
+								<input type="radio" name="conteinerCategoria" id="categoriaimportacao" value="importacao">
 								<label for="status">Exportação</label>
-								<input type="radio" name="conteinerCategoria" id="categoriaexportacao">
+								<input type="radio" name="conteinerCategoria" id="categoriaexportacao" value="exportacao">
 								
 								<div  class="form-control is-invalid" th:errors="*{conteinerCategoria}">
 									mensagem de erro para Categoria
