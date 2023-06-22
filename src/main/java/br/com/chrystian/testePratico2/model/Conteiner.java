@@ -1,8 +1,8 @@
 package br.com.chrystian.testePratico2.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
@@ -17,9 +17,10 @@ public class Conteiner {
 	private String status;
 	private String categoria;
 	
+	@OneToOne(mappedBy = "conteiner", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Movimentacao movimentacao;
 	
-
-
+	
 	public String getCliente() {
 		return cliente;
 	}

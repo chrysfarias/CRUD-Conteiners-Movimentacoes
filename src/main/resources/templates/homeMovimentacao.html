@@ -1,0 +1,93 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+	<main>
+
+		<div class=".container">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<a class="p-2 fs-3 link-underline-light" href="/home">Conteiners </a>
+			<a class="p-2 fs-3 link-underline-light" href="/movimentacao/home">Movimentações </a>
+			<a class="p-2 fs-3 link-underline-light" href="/relatorios">Relatórios </a>
+			</nav>
+		</div>
+	
+		<div class="container mt-3">
+			<nav class="p-2 navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-between"> 
+				<input  class="input-group-text" id="inputGroup-sizing-sm" placeholder="Pesquisa Movimentação"></input>
+				<button data-bs-toggle="modal" data-bs-target="#janelamodalmovimentacao"  class="btn btn-primary btn-lg" >Adicionar Movimentação</button>
+			</nav>
+	
+	
+		<table class="container mt-3 table table-striped table-bordered">
+			<tr>
+				<th>Número Conteiner</th>	
+				<th>Tipo de Movimentação</th>	
+				<th>Data e Hora do Início</th>	
+				<th>Data e Hora do Fim</th>	
+				<th>Ações</th>	
+			</tr>
+			<tr th:each="movimentacao:${movimentacoes}">
+				<td th:text="${movimentacao.conteiner.numeroConteiner}">item1</td>
+				<td th:text="${movimentacao.tipoMovimentacao}">item2</td>
+				<td th:text="${movimentacao.dataHoraInicio}">item3</td>
+				<td th:text="${movimentacao.dataHoraFim}">item4</td>
+				<td>
+					<div>
+						<a class="btn btn-primary  btn-sm" href="">Alterar</a>
+						<a class="btn btn-danger  btn-sm"  href="">Excluir</a>					
+					</div>			
+				</td>	
+			</tr>		
+		</table>
+	</div>
+	
+	<div id="janelamodalmovimentacao" class="modal" tabindex="-1">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h1>Formulário de  Movimentações</h1>
+     			 </div>
+     			 
+     			  <div  id="janelamodalmovimentacao"class="modal-body">
+       					 <form  action="/movimentacao/novaMovimentacao" Method="POST">
+       					 	<label>Número Conteiner</label><br>
+       					 	<input name="numeroConteiner"><br>
+       					 	<label>Tipo de Movimentação</label><br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoEmbarque" value="Embarque"> Embarque <br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoDescarga" value="Descarga"> Descarga <br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoGateIn" value="GateIn"> GateIn<br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoGateOut" value="GateOut"> GateOut <br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoReposicionamento" value="Reposicionamento"> Reposicionamento<br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoPesagem" value="Pesagem"> Pesagem <br>
+       					 	<input type=radio name=movimentacaoTipo id="tipoScanner" value="Scanner"> Scanner <br>
+       					 	
+       					 	<label>Data e Hora do Início</label>
+       					 	<input type="date" name="dataHoraInicio" >  <br>
+       					 	
+       					 	<label class="mt-2">Data e Hora do Fim </label>
+       					 	<input name="dataHoraFim"  type="date">  
+       					 	
+       					 	<div class="modal-footer">
+       					 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        						<input name="teste" type="submit" value="Cadastrar" class="btn btn-primary">
+      					</div>      						 	
+       					 </form>
+       					
+      				</div>
+      				
+      				
+	
+	</div>
+	</div>
+	</div>
+	
+	
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+
+</html>

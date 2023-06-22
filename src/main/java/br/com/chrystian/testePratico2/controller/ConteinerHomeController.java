@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import br.com.chrystian.testePratico2.dto.RequisicaoNovoCadastro;
 import br.com.chrystian.testePratico2.model.Conteiner;
 import br.com.chrystian.testePratico2.repository.ConteinerRepository;
-import br.com.chrystian.testePratico2.repository.MovimentacaoRepository;
+
 
 
 @Controller

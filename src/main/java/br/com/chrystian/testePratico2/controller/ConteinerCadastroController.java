@@ -34,10 +34,7 @@ public class ConteinerCadastroController {
 		List<Conteiner> conteiners = conteinerRepository.findAllOrderBynumeroConteiner();
 		model.addAttribute("conteiners", conteiners);
 		
-		
-		if(result.hasErrors()) {
-			
-			
+		if(result.hasErrors()) {			
 			model.addAttribute("mensagemErro", "Ocorreu um erro");
 			return "home";
 		}
@@ -45,7 +42,7 @@ public class ConteinerCadastroController {
 		Conteiner conteinerTeste  = requisicao.toConteiner();	
 		conteinerRepository.save(conteinerTeste);
 		model.addAttribute("mensagemSucesso", "Operação Realizada com Sucesso");
-		return "redirect:/home";
+		return "home";
 	}
 	
 	@GetMapping("/excluir/{id}")
