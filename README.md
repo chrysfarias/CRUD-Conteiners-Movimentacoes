@@ -28,8 +28,7 @@ https://github.com/chrysfarias/TestePratico/assets/97462644/dfc97d72-2f0c-4be0-b
 ✔️ &nbsp; Validações
 ✔️ &nbsp; Ordenação
 ✔️ &nbsp; Filtragem
-✔️ &nbsp; Relatório Com relacionamento de tabelas
-✔️ &nbsp; Relacionamento de Tabelas
+✔️ &nbsp; Relatório com relacionamento de tabelas
 ✔️ &nbsp; Mensagens de Erro
 
 <br/>
