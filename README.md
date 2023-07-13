@@ -16,7 +16,6 @@ https://github.com/chrysfarias/TestePratico/assets/97462644/dfc97d72-2f0c-4be0-b
 
 :clapper: &nbsp; O projeto consiste na criação de uma aplicação Web, onde o usuário pode cadastrar, atualizar, deletar e filtrar registros.
 
-
 <br/>
 
 ## 🗃️ Funcionalidades
